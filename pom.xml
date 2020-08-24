@@ -100,6 +100,7 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                          -Dcucumber.options="--plugin io.qameta.allure.cucumberjvm.AllureCucumberJvm"
+                        -Dfile.encoding=UTF-8
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>otusTest.xml</suiteXmlFile>
