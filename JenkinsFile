@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    tools {
+        jdk 'java8'
+        maven 'maven'
+    }
+    stages {
+      stage('Build') {
+         steps {
+            echo "Start build"
+            git credentialsId: 'aecc008d-941d-4382-8bb3-9d39918ac124', url: 'https://github.com/SerjCooper/BDD_cucumber'
+            echo "Finish build"
+
+         }
+      }
+      stage('Clean') {
+          steps {
+             echo "Clean garbage"
+             bat 'mvn clean'
+
+          }
+      }
+      stage('Test') {
+          steps {
+             echo "Tests execute"
+             bat 'mvn test'
+
+          }
+      }
+
+    }
+}
