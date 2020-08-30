@@ -57,6 +57,7 @@ public class Browser {
             default:
                 ChromeOptions chromeOptions = new ChromeOptions();                    //для включения ChromeOptions раскоменть это
                 chromeOptions.addArguments("disable-extensions");
+                //chromeOptions.addArguments("--headless");
                 driver = WebDriverFactory.create(browserName, chromeOptions);
                 break;
         }
